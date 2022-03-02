@@ -18,10 +18,10 @@ STEPPER_PULSES_PER_MM_E = 150
 
 # Invert axises direction, by default(False) high level means increase of
 # position. For inverted(True) axis, high level means decrease of position.
-STEPPER_INVERTED_X = True
+STEPPER_INVERTED_X = False
 STEPPER_INVERTED_Y = False
 STEPPER_INVERTED_Z = False
-STEPPER_INVERTED_E = True
+STEPPER_INVERTED_E = False
 
 # Invert zero end stops switches. By default(False) low level on input pin
 # means that axis in zero position. For inverted(True) end stops, high level
@@ -31,8 +31,8 @@ ENDSTOP_INVERTED_Y = True
 ENDSTOP_INVERTED_Z = False  # Auto leveler
 
 # Workplace physical size.
-TABLE_SIZE_X_MM = 200
-TABLE_SIZE_Y_MM = 200
+TABLE_SIZE_X_MM = 800
+TABLE_SIZE_Y_MM = 800
 TABLE_SIZE_Z_MM = 220
 
 # Mixed settings.
@@ -64,12 +64,19 @@ STEPPER_DIR_PIN_Y = 19
 STEPPER_DIR_PIN_Z = 13
 STEPPER_DIR_PIN_E = 7
 
+# 3d Printer modules
+ENABLE_SPINDLE = False
 SPINDLE_PWM_PIN = 4
+ENABLE_FAN = False
 FAN_PIN = 27
+ENABLE_EXTRUDER_HEATER = False
 EXTRUDER_HEATER_PIN = 18
+ENABLE_BED_HEATER = False
 BED_HEATER_PIN = 22
-EXTRUDER_TEMPERATURE_SENSOR_CHANNEL = 2
-BED_TEMPERATURE_SENSOR_CHANNEL = 1
+if ENABLE_EXTRUDER_HEATER:
+    EXTRUDER_TEMPERATURE_SENSOR_CHANNEL = 2
+if ENABLE_BED_HEATER:
+    BED_TEMPERATURE_SENSOR_CHANNEL = 1
 
 ENDSTOP_PIN_X = 23
 ENDSTOP_PIN_Y = 10
